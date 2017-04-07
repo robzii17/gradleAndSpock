@@ -54,3 +54,12 @@ task list {
 		collection.collect{ relativePath(it)}.sort().each{println it}
 	
 }
+
+task listFileInSrc{
+	description 'List files in src dir'
+	
+	FileTree tree = fileTree(dir: 'src')
+		tree.each{File file -> println file}
+	
+	
+}
